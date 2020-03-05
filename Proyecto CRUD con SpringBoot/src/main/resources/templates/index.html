@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Partidos NBA</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:replace="navbar :: common-navbar"></div>
+	<div class="container-fluid">
+		<table class="table table-hover text-center">
+			<thead>
+				<tr>
+					<th scope="col">Fecha</th>
+					<th scope="col">Hora</th>
+					<th scope="col">Equipo local</th>
+					<th scope="col">Equipo visitante</th>
+					<th scope="col">Precio</th>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="partido:${partidos}">
+					<td th:text="${partido.fecha}"></td>
+					<td th:text="${partido.hora}"></td>
+					<th th:text="${partido.equipoLocal.nombre}"></th>
+					<th th:text="${partido.equipoVisitante.nombre}"></th>
+					<td th:text="${partido.precio}"></td>
+					<td><a th:href="@{/editar/}+${partido.id}"
+						class="btn btn-warning">Editar partido</a> &nbsp; <a
+						th:onclick="eliminar([[${partido.id}]])"
+						class="btn btn-danger text-white">Eliminar partido</a>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="funciones.js"></script>
+</body>
+</html>
