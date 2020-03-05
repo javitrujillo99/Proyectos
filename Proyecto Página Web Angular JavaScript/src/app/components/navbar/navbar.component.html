@@ -1,0 +1,21 @@
+<nav>
+    <div class="nav-wrapper grey darken-4">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
+            <li><a routerLink="/"><img src="../../../assets/images/cinemania.png" width="240"></a></li>
+        </ul>
+        <ul class="right">
+            <li *ngIf="isLogged"><a routerLink = "/usuarios">Administrar usuarios</a></li>
+            <!-- <li><a class="waves-effect waves-light btn-small">Iniciar sesión
+                <i class= "material-icons">keyboard_tab</i>
+            </a></li> -->
+            <li *ngIf="!isLogged">
+                <button class="waves-effect waves-light btn-small" mat-raised-button (click)="openDialog()">Iniciar
+                sesión</button>
+            </li>
+            <li class="nav-item" *ngIf="isLogged">
+                <button class="waves-effect waves-light btn-small btn-danger" (click)="onLogout()">Logout</button>
+            </li>
+        </ul>
+    </div>
+</nav>

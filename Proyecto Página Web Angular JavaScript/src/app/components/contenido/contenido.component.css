@@ -1,0 +1,13 @@
+#content {
+    background: url('../../../assets/images/cinema.jpeg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.card {
+    background-color: transparent;
+    margin-right: 40px;
+}
+img {
+    width: 150px;
+}

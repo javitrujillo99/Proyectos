@@ -1,0 +1,11 @@
+.form-control.login-user {
+    border: 0px solid #fff !important;
+  }
+.form-check-input {
+  background-color:black;
+  border:1px solid;
+}
+label {
+  font-size: 18px;
+  float: left;
+}

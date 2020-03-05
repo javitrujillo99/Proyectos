@@ -1,0 +1,25 @@
+<div *ngIf="usuarios | async as usuarios" class="container-fluid text-center" style="height:440px;">
+    <table class="tabler">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Email</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Sexo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <th scope="row">{{usuario.email}}</th>
+                <th scope="row">{{usuario.nombre}}</th>
+                <th scope="row">{{usuario.apellidos}}</th>
+                <th scope="row">{{usuario.sexo}}</th>
+                <th scope="row">
+                    <button (click)="onEditUsuario(usuario)" class="btn" style="background-color: deeppink;">Editar usuario</button>
+                    &nbsp;
+                    <button (click)="onDeleteUsuario(usuario)" class="btn btn-danger">Eliminar usuario</button></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
